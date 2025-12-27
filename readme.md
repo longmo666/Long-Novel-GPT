@@ -79,7 +79,7 @@ docker pull longmo666/long-novel-gpt:latest
 
 填写完成后在该 **.env**文件目录下，运行以下命令：
 ```bash
-docker run -p 80:80 --env-file .env -d maoxiaoyuz/long-novel-gpt:latest
+docker run -p 80:80 --env-file .env -d longmo666/long-novel-gpt:latest
 ```
 **注意，如果你在启动后改动了.env文件，那么必须关闭已启动的容器后，再运行上述命令才行。**
 
