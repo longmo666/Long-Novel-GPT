@@ -40,42 +40,43 @@ API_COST_LIMITS = {
 
 # API Settings
 API_SETTINGS = {
-    'wenxin': {
-        'ak': os.getenv('WENXIN_AK', ''),
-        'sk': os.getenv('WENXIN_SK', ''),
-        'available_models': os.getenv('WENXIN_AVAILABLE_MODELS', '').split(','),
-        'max_tokens': 4096,
-    },
-    'doubao': {
-        'api_key': os.getenv('DOUBAO_API_KEY', ''),
-        'endpoint_ids': os.getenv('DOUBAO_ENDPOINT_IDS', '').split(','),
-        'available_models': os.getenv('DOUBAO_AVAILABLE_MODELS', '').split(','),
-        'max_tokens': 4096,
-    },
+    # 'wenxin': {
+    #     'ak': os.getenv('WENXIN_AK', ''),
+    #     'sk': os.getenv('WENXIN_SK', ''),
+    #     'available_models': os.getenv('WENXIN_AVAILABLE_MODELS', '').split(','),
+    #     'max_tokens': 4096,
+    # },
+    # 'doubao': {
+    #     'api_key': os.getenv('DOUBAO_API_KEY', ''),
+    #     'endpoint_ids': os.getenv('DOUBAO_ENDPOINT_IDS', '').split(','),
+    #     'available_models': os.getenv('DOUBAO_AVAILABLE_MODELS', '').split(','),
+    #     'max_tokens': 4096,
+    # },
     'gpt': {
         'base_url': os.getenv('GPT_BASE_URL', ''),
         'api_key': os.getenv('GPT_API_KEY', ''),
         'proxies': os.getenv('GPT_PROXIES', ''),
         'available_models': os.getenv('GPT_AVAILABLE_MODELS', '').split(','),
         'max_tokens': 4096,
-    },
-    'zhipuai': {
-        'api_key': os.getenv('ZHIPUAI_API_KEY', ''),
-        'available_models': os.getenv('ZHIPUAI_AVAILABLE_MODELS', '').split(','),
-        'max_tokens': 4096,
-    },
-    'local': {
-        'base_url': os.getenv('LOCAL_BASE_URL', ''),
-        'api_key': os.getenv('LOCAL_API_KEY', ''),
-        'available_models': os.getenv('LOCAL_AVAILABLE_MODELS', '').split(','),
-        'max_tokens': 4096,
     }
+    # ,
+    # 'zhipuai': {
+    #     'api_key': os.getenv('ZHIPUAI_API_KEY', ''),
+    #     'available_models': os.getenv('ZHIPUAI_AVAILABLE_MODELS', '').split(','),
+    #     'max_tokens': 4096,
+    # },
+    # 'local': {
+    #     'base_url': os.getenv('LOCAL_BASE_URL', ''),
+    #     'api_key': os.getenv('LOCAL_API_KEY', ''),
+    #     'available_models': os.getenv('LOCAL_AVAILABLE_MODELS', '').split(','),
+    #     'max_tokens': 4096,
+    # }
 }
 
 for model in API_SETTINGS.values():
     model['available_models'] = [e.strip() for e in model['available_models']]
 
-DEFAULT_MAIN_MODEL = os.getenv('DEFAULT_MAIN_MODEL', 'wenxin/ERNIE-Novel-8K')
-DEFAULT_SUB_MODEL = os.getenv('DEFAULT_SUB_MODEL', 'wenxin/ERNIE-3.5-8K')
+DEFAULT_MAIN_MODEL = os.getenv('DEFAULT_MAIN_MODEL', 'gpt/gpt-4o-mini')
+DEFAULT_SUB_MODEL = os.getenv('DEFAULT_SUB_MODEL', 'gpt/gpt-4o-mini')
 
 ENABLE_ONLINE_DEMO = os.getenv('ENABLE_ONLINE_DEMO', 'false').lower() == 'true'
