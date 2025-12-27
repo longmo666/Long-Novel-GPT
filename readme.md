@@ -72,7 +72,7 @@ Long-Novel-GPT的核心是一个基于LLM和RAG的长篇小说Agent，根据用�
 
 运行下面命令拉取long-novel-gpt镜像
 ```bash
-docker pull maoxiaoyuz/long-novel-gpt:latest
+docker pull longmo666/long-novel-gpt:latest
 ```
 
 下载或复制[.env.example](.env.example)文件，将其放在你的任意一个目录下，将其改名为 **.env**, 并根据文件中提示填写API设置。
